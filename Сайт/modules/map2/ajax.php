@@ -2,14 +2,14 @@
 
 if ($_POST['form_id'] == 'form_updateMap'){
 
-	// ïîäêëþ÷àåì ìîäóëü ïîëó÷åíèÿ äàííûõ ïî èíòåðàêòèâíîé êàðòå ñ ó÷åòîì îòïðàâëåííûõ POST ïàðàìåòðîâ
+	// Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ð¼Ð¾Ð´ÑƒÐ»ÑŒ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¿Ð¾ Ð¸Ð½Ñ‚ÐµÑ€Ð°ÐºÑ‚Ð¸Ð²Ð½Ð¾Ð¹ ÐºÐ°Ñ€Ñ‚Ðµ Ñ ÑƒÑ‡ÐµÑ‚Ð¾Ð¼ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð½Ñ‹Ñ… POST Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²
     include($_SERVER['DOCUMENT_ROOT'].'/modules/map2/include/data.php');
-    // ïîäêëþ÷àåì ìîäóëü ßíäåêñ.Êàðòû
+    // Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ð¼Ð¾Ð´ÑƒÐ»ÑŒ Ð¯Ð½Ð´ÐµÐºÑ.ÐšÐ°Ñ€Ñ‚Ñ‹
     include($_SERVER['DOCUMENT_ROOT'].'/modules/map2/include/map.php');
 
 }
 
-// ñîõðàíåíèå íàðèñîâàííîé ïîëüçîâàòåëåì îêðóæíîñòè íà êàðòå â ÁÄ ïðè íàæàòèè êíîïêè Ñîõðàíèòü
+// ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ðµ Ð½Ð°Ñ€Ð¸ÑÐ¾Ð²Ð°Ð½Ð½Ð¾Ð¹ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÐµÐ¼ Ð¾ÐºÑ€ÑƒÐ¶Ð½Ð¾ÑÑ‚Ð¸ Ð½Ð° ÐºÐ°Ñ€Ñ‚Ðµ Ð² Ð‘Ð” Ð¿Ñ€Ð¸ Ð½Ð°Ð¶Ð°Ñ‚Ð¸Ð¸ ÐºÐ½Ð¾Ð¿ÐºÐ¸ Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ
 if ($_POST['form_id'] == 'form_saveCircle' and $_SESSION['user_id'] > 0){
 	$radius = clearData($_POST['radius']);
     $lng = clearData($_POST['lng']);
@@ -17,7 +17,8 @@ if ($_POST['form_id'] == 'form_saveCircle' and $_SESSION['user_id'] > 0){
 
     if (!empty($radius)
     and !empty($lng)
-    and !empty($lat)){    	db_query("INSERT INTO mos_users_circles (
+    and !empty($lat)){
+    	db_query("INSERT INTO mos_users_circles (
     		user_id,
     		radius,
     		lng,
